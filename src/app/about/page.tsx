@@ -29,19 +29,19 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[24px] border border-[#d7e6dd] sm:aspect-[5/6]">
               <Image
-                src={stockImages.education.src}
-                alt={stockImages.education.alt}
+                src={stockImages.aboutPage.src}
+                alt={stockImages.aboutPage.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 560px"
-                className="object-cover"
+                className="object-cover object-[center_20%]"
                 priority
               />
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"
               />
               <p className="absolute bottom-3 left-4 text-[10px] text-white/85">
-                {stockImages.education.credit}
+                {stockImages.aboutPage.credit}
               </p>
             </div>
           </Reveal>

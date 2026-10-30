@@ -34,7 +34,7 @@ export default function BlogsPage() {
                     alt=""
                     fill
                     sizes="200px"
-                    className="object-cover"
+                    className="object-cover object-[center_30%]"
                   />
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${post.coverGradient}`} />

@@ -39,14 +39,14 @@ export function InsightsFilter() {
               href={`/blogs/${post.slug}`}
               className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-border bg-card transition hover:-translate-y-1 hover:border-primary/30"
             >
-              <div className="relative h-40 bg-[#e8f0eb]">
+              <div className="relative aspect-[16/10] w-full bg-[#e8f0eb]">
                 {post.coverImage ? (
                   <Image
                     src={post.coverImage}
                     alt=""
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    className="object-cover object-[center_30%] transition duration-500 group-hover:scale-[1.03]"
                   />
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${post.coverGradient}`} />

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/layout/page-hero";
 import { PageTransition } from "@/components/motion/page-transition";
@@ -21,31 +20,9 @@ export default function WorkshopsPage() {
       <PageHero
         title={workshopCopy.hero.title}
         description={workshopCopy.hero.description}
+        imageSrc={stockImages.workshopPage.src}
+        imageAlt={stockImages.workshopPage.alt}
       />
-
-      <Section className="pt-0 md:pt-4">
-        <Reveal>
-          <div className="relative mb-10 overflow-hidden rounded-[24px] border border-[#d7e6dd]">
-            <div className="relative aspect-[21/9] min-h-[180px] w-full sm:min-h-[220px]">
-              <Image
-                src={stockImages.workshop.src}
-                alt={stockImages.workshop.alt}
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover object-center"
-              />
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"
-              />
-            </div>
-            <p className="absolute bottom-3 left-4 text-[10px] text-white/85">
-              {stockImages.workshop.credit}
-            </p>
-          </div>
-        </Reveal>
-      </Section>
 
       <Section>
         <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">

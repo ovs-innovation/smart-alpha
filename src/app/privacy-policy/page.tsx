@@ -32,7 +32,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: `For privacy questions, email ${siteConfig.email} or write to our Mumbai office address listed on the Contact page.`,
+    body: `For privacy questions, email ${siteConfig.email} or contact us using the details on the Contact page.`,
   },
 ];
 

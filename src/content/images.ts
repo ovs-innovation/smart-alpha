@@ -1,72 +1,108 @@
 /**
- * Local copies of free stock photos from Pexels (original photographer work, not AI-generated).
- * Credits: see comments per asset.
+ * Unique stock photos — context only (desks, charts, INR, planning).
+ * No single-person portraits. Each asset used in ONE place.
  */
 export const stockImages = {
-  /** Tima Miroshnichenko — financial graphs on tablet in meeting · pexels.com/photo/7567596 */
-  heroFinance: {
-    src: "/images/hero-finance.jpg",
-    alt: "Professionals reviewing financial charts on a tablet during a meeting",
-    credit: "Photo by Tima Miroshnichenko on Pexels",
+  /** Market indices / Sensex-style trading screen — home hero */
+  hero: {
+    src: "/images/sa-hero-sensex.jpg",
+    alt: "Sensex-style stock market indices and chart on a trading screen",
+    credit: "Photo by Kindel Media on Pexels",
   },
-  /** fauxels — team collaboration meeting · pexels.com/photo/3184291 */
-  workshop: {
-    src: "/images/workshop.jpg",
-    alt: "Team collaborating in a corporate workshop meeting",
-    credit: "Photo by fauxels on Pexels",
+  /** Tablet with stock chart on desk — home about */
+  aboutHome: {
+    src: "/images/sa-about-market.jpg",
+    alt: "Tablet showing a stock market chart on a professional desk",
+    credit: "Photo by AlphaTradeZone on Pexels",
   },
-  /** fauxels — business discussion · pexels.com/photo/3184465 */
-  education: {
-    src: "/images/education.jpg",
-    alt: "Professionals discussing ideas in a bright office",
-    credit: "Photo by fauxels on Pexels",
+  /** Tablet growth chart — workshops teaser */
+  workshopHome: {
+    src: "/images/sa-workshop-home.jpg",
+    alt: "Tablet showing a growth bar chart on a planning desk",
+    credit: "Photo on Pexels",
   },
-  /** RDNE Stock project — person studying charts · pexels.com/photo/6801648 */
-  insightMarket: {
-    src: "/images/insights-1.jpg",
-    alt: "Investor reviewing market data on a laptop",
-    credit: "Photo by RDNE Stock project on Pexels",
+  /** Candlestick trading chart — mutual funds */
+  serviceFunds: {
+    src: "/images/sa-svc-funds-chart.jpg",
+    alt: "Stock market candlestick chart on a trading monitor",
+    credit: "Photo on Pexels",
   },
-  /** Cup of Couple — coins and savings · pexels.com/photo/4386370 */
-  insightSip: {
-    src: "/images/insights-2.jpg",
-    alt: "Coins and savings jar representing long-term investing",
-    credit: "Photo by Cup of Couple on Pexels",
+  /** Checklist notebook — corporate workshops */
+  serviceWorkshop: {
+    src: "/images/sa-svc-workshop.jpg",
+    alt: "Hand ticking items on a planning checklist notebook",
+    credit: "Photo on Unsplash",
   },
-  /** Pixabay — calculator and finance papers · pexels.com/photo/3943716 */
-  insightFunds: {
-    src: "/images/insights-3.jpg",
-    alt: "Calculator and financial documents on a desk",
-    credit: "Photo by Pixabay on Pexels",
+  /** Bookshelf — financial education */
+  serviceEducation: {
+    src: "/images/sa-svc-education.jpg",
+    alt: "Bookshelf representing learning and financial education",
+    credit: "Photo on Pexels",
   },
-  /** Lukas · charts and analytics · pexels.com/photo/590022 */
-  insightAnalysis: {
-    src: "/images/insights-4.jpg",
-    alt: "Business analytics charts and graphs on a screen",
-    credit: "Photo by Lukas on Pexels",
+  /** Analytics report on desk — portfolio support */
+  servicePortfolio: {
+    src: "/images/sa-svc-portfolio.jpg",
+    alt: "Laptop and printed analytics charts on a review desk",
+    credit: "Photo on Pexels",
   },
-  /** RDNE Stock project — desk with financial planning · pexels.com/photo/6802042 */
-  insightPolicy: {
-    src: "/images/insights-5.jpg",
-    alt: "Financial planning documents and laptop on a desk",
-    credit: "Photo by RDNE Stock project on Pexels",
+  /** Trading charts phone + paper — market insights */
+  insight1: {
+    src: "/images/sa-insight-1.jpg",
+    alt: "Stock charts on a phone and printed market analysis sheets",
+    credit: "Photo on Pexels",
   },
-  /** Cup of Couple — piggy bank and coins · pexels.com/photo/4386431 */
-  insightRetirement: {
-    src: "/images/insights-6.jpg",
-    alt: "Piggy bank and coins representing long-term savings",
-    credit: "Photo by Cup of Couple on Pexels",
+  /** ₹500 notes — SIP / long-term */
+  insight2: {
+    src: "/images/sa-insight-2.jpg",
+    alt: "Indian 500-rupee notes representing SIPs and long-term saving",
+    credit: "Photo by Pranav Choubey on Pexels",
   },
-  /** RDNE Stock project — reviewing investments · pexels.com/photo/6801874 */
-  mutualFunds: {
-    src: "/images/mutual-funds.jpg",
-    alt: "Person reviewing investment charts and fund information",
-    credit: "Photo by RDNE Stock project on Pexels",
+  /** ₹100 notes — mutual fund basics */
+  insight3: {
+    src: "/images/sa-insight-3.jpg",
+    alt: "Indian 100-rupee notes representing mutual fund investing",
+    credit: "Photo by DEV ROY on Pexels",
   },
-  /** Lukas — portfolio analytics · pexels.com/photo/590041 */
-  portfolio: {
-    src: "/images/portfolio.jpg",
-    alt: "Laptop showing portfolio analytics and market charts",
-    credit: "Photo by Lukas on Pexels",
+  /** ₹20 coin — investment risks */
+  insight4: {
+    src: "/images/sa-insight-4.jpg",
+    alt: "Indian currency coin and notes representing careful money decisions",
+    credit: "Photo on Pexels",
+  },
+  /** Mixed INR notes — financial awareness */
+  insight5: {
+    src: "/images/sa-insight-5.jpg",
+    alt: "Indian rupee notes of different denominations for everyday money habits",
+    credit: "Photo by Mayur Freelancer on Pexels",
+  },
+  /** Clean desk tools — workshop highlights */
+  insight6: {
+    src: "/images/sa-insight-6.jpg",
+    alt: "Laptop, notebook and phone on a desk prepared for a learning session",
+    credit: "Photo on Pexels",
+  },
+  /** Market ticker board — CTA */
+  cta: {
+    src: "/images/sa-cta-market.jpg",
+    alt: "Electronic stock market ticker board with live price data",
+    credit: "Photo on Pexels",
+  },
+  /** Ahmedabad business district — about page */
+  aboutPage: {
+    src: "/images/sa-about-page.jpg",
+    alt: "Modern office buildings in an Indian business district",
+    credit: "Photo by Ranjeet Chauhan on Pexels",
+  },
+  /** Laptop analytics dashboard — workshops page */
+  workshopPage: {
+    src: "/images/sa-workshop-page.jpg",
+    alt: "Laptop showing charts and analytics during a planning session",
+    credit: "Photo on Pexels",
+  },
+  /** Candlestick research desk — investment plans */
+  plans: {
+    src: "/images/sa-plans.jpg",
+    alt: "Printed stock charts, glasses and laptop on a research desk",
+    credit: "Photo on Pexels",
   },
 } as const;

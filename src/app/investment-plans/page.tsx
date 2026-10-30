@@ -5,8 +5,9 @@ import { Stagger, StaggerItem } from "@/components/motion/reveal";
 import { GlassCard } from "@/components/ui/glass-card";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { Section, SectionHeader } from "@/components/ui/section";
-import { investmentPlans } from "@/content/plans";
 import { CTA } from "@/components/home/cta";
+import { stockImages } from "@/content/images";
+import { investmentPlans } from "@/content/plans";
 
 export const metadata: Metadata = {
   title: "Investment Plans",
@@ -20,6 +21,8 @@ export default function InvestmentPlansPage() {
       <PageHero
         title="Portfolios designed around goals—not products"
         description="Choose a starting framework. We personalize allocation, instruments, and monitoring to your risk profile."
+        imageSrc={stockImages.plans.src}
+        imageAlt={stockImages.plans.alt}
       />
       <Section>
         <SectionHeader

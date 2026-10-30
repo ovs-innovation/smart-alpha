@@ -21,8 +21,8 @@ export const services: Service[] = [
       "Explore mutual fund options and relevant scheme information, subject to authorised services.",
     cta: { label: "Enquire", href: "/contact?topic=mutual-funds" },
     icon: "PieChart",
-    image: "/images/mutual-funds.jpg",
-    imageAlt: "Person reviewing mutual fund and investment charts",
+    image: "/images/sa-svc-funds-chart.jpg",
+    imageAlt: "Tablet screen showing market growth charts and fund data",
   },
   {
     id: "2",
@@ -34,8 +34,8 @@ export const services: Service[] = [
       "Educational sessions covering budgeting, saving, investment fundamentals, risk awareness and financial goals.",
     cta: { label: "Organise a Workshop", href: "/workshops" },
     icon: "Users",
-    image: "/images/workshop.jpg",
-    imageAlt: "Team collaborating in a corporate workshop meeting",
+    image: "/images/sa-svc-workshop.jpg",
+    imageAlt: "Hand ticking items on a planning checklist notebook",
   },
   {
     id: "3",
@@ -47,8 +47,8 @@ export const services: Service[] = [
       "Accessible explanations of market movements, investment terminology and investing concepts.",
     cta: { label: "Explore Insights", href: "/market-insights" },
     icon: "BookOpen",
-    image: "/images/education.jpg",
-    imageAlt: "Professionals discussing ideas in a bright office",
+    image: "/images/sa-svc-education.jpg",
+    imageAlt: "Bookshelf representing learning and financial education",
   },
   {
     id: "4",
@@ -60,8 +60,8 @@ export const services: Service[] = [
       "Discuss actual review, monitoring or distribution services, including scope, fees and authorisations.",
     cta: { label: "Discuss Requirements", href: "/contact?topic=portfolio-review" },
     icon: "Briefcase",
-    image: "/images/portfolio.jpg",
-    imageAlt: "Laptop showing portfolio analytics and market charts",
+    image: "/images/sa-svc-portfolio.jpg",
+    imageAlt: "Laptop and printed analytics charts on a review desk",
   },
 ];
 

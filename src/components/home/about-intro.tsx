@@ -9,7 +9,7 @@ import { homeCopy } from "@/content/site";
 
 export function AboutIntro() {
   const { about } = homeCopy;
-  const photo = stockImages.education;
+  const photo = stockImages.aboutHome;
 
   return (
     <Section className="bg-white">
@@ -22,7 +22,7 @@ export function AboutIntro() {
                 alt={photo.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 560px"
-                className="object-cover"
+                className="object-cover object-center"
               />
             </div>
             <div

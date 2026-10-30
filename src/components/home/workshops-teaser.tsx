@@ -8,7 +8,7 @@ import { stockImages } from "@/content/images";
 import { workshopCopy, workshopTopics } from "@/content/workshops";
 
 export function WorkshopsTeaser() {
-  const photo = stockImages.workshop;
+  const photo = stockImages.workshopHome;
 
   return (
     <Section className="bg-surface">
@@ -21,7 +21,7 @@ export function WorkshopsTeaser() {
                 alt={photo.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 560px"
-                className="object-cover"
+                className="object-cover object-[center_35%]"
               />
               <div
                 aria-hidden

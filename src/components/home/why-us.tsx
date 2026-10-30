@@ -12,11 +12,11 @@ export function WhyUs() {
         title="Education, transparency and clear options"
         description="Helping people understand financial concepts and their options before making decisions."
       />
-      <Stagger className="grid gap-x-10 gap-y-12 md:grid-cols-2" stagger={0.09}>
+      <Stagger className="grid gap-x-10 gap-y-10 md:grid-cols-2" stagger={0.09}>
         {whyChoose.map((item, index) => (
           <StaggerItem key={item.id}>
             <article className="group relative h-full">
-              <div className="mb-5 flex items-center gap-3">
+              <div className="mb-4 flex items-center gap-3">
                 <span className="font-[family-name:var(--font-display)] text-sm font-semibold text-primary">
                   {String(index + 1).padStart(2, "0")}
                 </span>

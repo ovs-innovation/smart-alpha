@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { stockImages } from "@/content/images";
 
 export function HeroVisual() {
-  const photo = stockImages.heroFinance;
+  const photo = stockImages.hero;
 
   return (
     <motion.div
@@ -29,7 +29,6 @@ export function HeroVisual() {
             className="absolute inset-0 bg-gradient-to-t from-[#04140a]/70 via-[#04140a]/15 to-transparent"
           />
 
-          {/* Floating info card on photo */}
           <div className="absolute inset-x-3 bottom-3 sm:inset-x-4 sm:bottom-4">
             <div className="rounded-xl border border-white/40 bg-white/95 p-3.5 shadow-[0_12px_30px_rgba(14,21,18,0.18)] backdrop-blur-md sm:rounded-2xl sm:p-4">
               <div className="flex items-center justify-between gap-3">

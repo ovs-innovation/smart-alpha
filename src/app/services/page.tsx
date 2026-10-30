@@ -4,9 +4,9 @@ import Link from "next/link";
 import { PageHero } from "@/components/layout/page-hero";
 import { PageTransition } from "@/components/motion/page-transition";
 import { Section } from "@/components/ui/section";
-import { services } from "@/content/services";
 import { CTA } from "@/components/home/cta";
 import { Reveal } from "@/components/motion/reveal";
+import { services } from "@/content/services";
 
 export const metadata: Metadata = {
   title: "Our Services",

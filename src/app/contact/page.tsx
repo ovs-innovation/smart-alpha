@@ -14,7 +14,10 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <PageTransition>
-      <PageHero title={homeCopy.contact.title} description={homeCopy.contact.description} />
+      <PageHero
+        title={homeCopy.contact.title}
+        description={homeCopy.contact.description}
+      />
       <Section>
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-4">

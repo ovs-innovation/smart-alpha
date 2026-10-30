@@ -30,7 +30,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-03-01",
     readTime: "4 min",
     coverGradient: "from-emerald-500/30 via-slate-900 to-slate-950",
-    coverImage: "/images/insights-1.jpg",
+    coverImage: "/images/sa-insight-1.jpg",
     content: [
       "Markets rise and fall for many reasons—earnings, interest rates, global events and investor sentiment. Understanding the basics helps people stay calm when headlines feel loud.",
       "Smart Alpha’s educational content focuses on concepts first: what is moving, why it may matter, and how that differs from day-to-day speculation.",
@@ -48,7 +48,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-02-18",
     readTime: "5 min",
     coverGradient: "from-sky-500/25 via-slate-900 to-slate-950",
-    coverImage: "/images/insights-3.jpg",
+    coverImage: "/images/sa-insight-3.jpg",
     content: [
       "Mutual funds pool money from many investors and invest across instruments based on the scheme’s stated objective.",
       "Knowing the difference between equity, debt and hybrid categories—and how risk and return typically relate—helps people ask better questions.",
@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-02-05",
     readTime: "4 min",
     coverGradient: "from-amber-500/25 via-slate-900 to-slate-950",
-    coverImage: "/images/insights-2.jpg",
+    coverImage: "/images/sa-insight-2.jpg",
     content: [
       "A Systematic Investment Plan (SIP) helps people invest regularly instead of trying to time every market move.",
       "Long-term investing works best when linked to clear goals—education, retirement or other milestones—and a horizon that matches those goals.",
@@ -84,7 +84,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-01-22",
     readTime: "5 min",
     coverGradient: "from-violet-500/25 via-slate-900 to-slate-950",
-    coverImage: "/images/insights-4.jpg",
+    coverImage: "/images/sa-insight-4.jpg",
     content: [
       "Every investment carries risk—market risk, interest-rate risk, liquidity risk and the risk of not meeting a goal on time.",
       "Understanding risk does not remove it, but it helps people choose options that better match their comfort and time horizon.",
@@ -102,7 +102,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2026-01-10",
     readTime: "4 min",
     coverGradient: "from-rose-500/20 via-slate-900 to-slate-950",
-    coverImage: "/images/insights-5.jpg",
+    coverImage: "/images/sa-insight-5.jpg",
     content: [
       "Financial awareness starts with everyday habits: knowing where money goes, building an emergency buffer and setting clear goals.",
       "When people understand budgeting and saving first, conversations about mutual funds and long-term planning become clearer.",
@@ -120,7 +120,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2025-12-15",
     readTime: "3 min",
     coverGradient: "from-teal-500/25 via-slate-900 to-slate-950",
-    coverImage: "/images/insights-6.jpg",
+    coverImage: "/images/sa-insight-6.jpg",
     content: [
       "Corporate workshops help employees understand money management, investment fundamentals and long-term financial planning in a practical format.",
       "Typical themes include budgeting and saving, mutual funds and SIPs, risk and return, goal-setting, investor behaviour and market volatility.",
