@@ -24,7 +24,7 @@ export const faqs: FAQ[] = [
     id: "3",
     question: "What services do you offer?",
     answer:
-      "Mutual Fund Solutions, Corporate Workshops, Financial Education & Market Insights, and Investment Support & Portfolio Review—subject to authorised services.",
+      "Mutual Fund Solutions, Corporate Workshops, Financial Education, and Investment Support & Portfolio Review—subject to authorised services.",
     category: "General",
   },
   {

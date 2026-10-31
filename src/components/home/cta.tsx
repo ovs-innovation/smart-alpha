@@ -1,50 +1,44 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
+import { TaglineNote } from "@/components/brand/tagline-bar";
 import { Reveal } from "@/components/motion/reveal";
-import { MagneticButton } from "@/components/ui/magnetic-button";
-import { Section } from "@/components/ui/section";
-import { stockImages } from "@/content/images";
-import { homeCopy } from "@/content/site";
 
 export function CTA() {
-  const photo = stockImages.cta;
-
   return (
-    <Section className="pb-14 md:pb-24 lg:pb-28">
-      <Reveal>
-        <div className="relative overflow-hidden rounded-[24px] border border-primary/15 sm:rounded-[28px]">
-          <div className="absolute inset-0">
-            <Image
-              src={photo.src}
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover object-[center_40%]"
-            />
-            <div aria-hidden className="absolute inset-0 bg-[#04140a]/72" />
-          </div>
-          <div className="relative px-5 py-12 text-center sm:px-16 md:py-16">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
-              Contact
+    <section className="bg-white pb-14 pt-2 md:pb-16">
+      <div className="mx-auto w-full max-w-[1100px] px-5 sm:px-8 lg:px-10">
+        <Reveal>
+          <div className="rounded-2xl border border-border bg-surface px-6 py-9 text-center sm:px-10 sm:py-11">
+            <p className="font-[family-name:var(--font-hindi)] text-[13px] font-medium text-gold">
+              संपर्क करें
             </p>
-            <h2 className="mx-auto mt-4 max-w-2xl font-[family-name:var(--font-display)] text-3xl font-semibold tracking-tight text-white md:text-4xl">
-              {homeCopy.contact.title}
+            <h2 className="mx-auto mt-2 max-w-md font-[family-name:var(--font-display)] text-[1.55rem] font-semibold tracking-tight text-foreground sm:text-[1.85rem]">
+              Ready to take the next step?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-[16px] leading-relaxed text-white/80">
-              {homeCopy.contact.description}
+            <p className="mx-auto mt-2.5 max-w-md text-[14px] leading-relaxed text-muted">
+              Book a workshop for your team, or enquire about mutual funds and SIPs.
             </p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <MagneticButton href="/contact?topic=workshop" size="xl" className="rounded-xl">
-                Request a Workshop
-              </MagneticButton>
-              <MagneticButton href="/contact" variant="outline" size="xl" className="rounded-xl bg-white">
-                Individual Enquiry
-              </MagneticButton>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
+              <Link
+                href="/contact?topic=workshop"
+                className="inline-flex h-10 items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-105"
+              >
+                Book a workshop
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex h-10 items-center rounded-full border border-border bg-white px-5 text-sm font-semibold text-foreground transition hover:border-primary/30"
+              >
+                Get in touch
+              </Link>
+            </div>
+            <div className="mx-auto mt-5 max-w-lg border-t border-border pt-4">
+              <TaglineNote />
             </div>
           </div>
-        </div>
-      </Reveal>
-    </Section>
+        </Reveal>
+      </div>
+    </section>
   );
 }

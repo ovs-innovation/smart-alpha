@@ -1,7 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input, Textarea } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 import { useForm } from "react-hook-form";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
@@ -14,6 +13,49 @@ type FormValues = {
   company?: string;
   message: string;
 };
+
+const topics = [
+  { id: "General Enquiry", label: "General" },
+  { id: "Corporate Workshop", label: "Workshop" },
+  { id: "Mutual Fund Solutions", label: "Mutual funds" },
+  { id: "Investment Support", label: "Portfolio" },
+  { id: "Financial Education", label: "Education" },
+] as const;
+
+function mapTopicParam(topicParam: string) {
+  if (topicParam === "workshop") return "Corporate Workshop";
+  if (topicParam === "mutual-funds") return "Mutual Fund Solutions";
+  if (topicParam === "portfolio-review") return "Investment Support";
+  return "General Enquiry";
+}
+
+function Field({
+  label,
+  htmlFor,
+  error,
+  children,
+}: {
+  label: string;
+  htmlFor: string;
+  error?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <label
+        htmlFor={htmlFor}
+        className="mb-2 block text-[11px] font-semibold tracking-[0.12em] text-muted uppercase"
+      >
+        {label}
+      </label>
+      {children}
+      {error ? <p className="mt-1.5 text-xs text-rose-500">{error}</p> : null}
+    </div>
+  );
+}
+
+const fieldClass =
+  "w-full border-0 border-b border-border bg-transparent px-0 py-2.5 text-[15px] text-foreground outline-none transition placeholder:text-muted/70 focus:border-primary";
 
 function ContactFormInner() {
   const searchParams = useSearchParams();
@@ -28,28 +70,13 @@ function ContactFormInner() {
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     defaultValues: {
-      topic:
-        topicParam === "workshop"
-          ? "Corporate Workshop"
-          : topicParam === "mutual-funds"
-            ? "Mutual Fund Solutions"
-            : topicParam === "portfolio-review"
-              ? "Investment Support"
-              : "General Enquiry",
+      topic: mapTopicParam(topicParam),
     },
   });
 
   useEffect(() => {
     if (!topicParam) return;
-    const mapped =
-      topicParam === "workshop"
-        ? "Corporate Workshop"
-        : topicParam === "mutual-funds"
-          ? "Mutual Fund Solutions"
-          : topicParam === "portfolio-review"
-            ? "Investment Support"
-            : "General Enquiry";
-    setValue("topic", mapped);
+    setValue("topic", mapTopicParam(topicParam));
   }, [topicParam, setValue]);
 
   const topic = watch("topic");
@@ -57,122 +84,145 @@ function ContactFormInner() {
 
   function onSubmit(_data: FormValues) {
     setSubmitted(true);
-    reset();
+    reset({ topic: "General Enquiry" });
   }
 
   if (submitted) {
     return (
-      <div className="glass rounded-[22px] p-8 text-center md:p-10">
-        <p className="font-[family-name:var(--font-display)] text-xl font-semibold text-primary">
+      <div className="flex min-h-[420px] flex-col items-start justify-center py-6">
+        <p className="text-[11px] font-semibold tracking-[0.16em] text-primary uppercase">
+          Message sent
+        </p>
+        <h2 className="mt-3 font-[family-name:var(--font-display)] text-[2rem] font-semibold tracking-tight text-foreground">
           Thank you
+        </h2>
+        <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-muted">
+          We’ve received your enquiry. Expect a reply within 1–2 working days.
         </p>
-        <p className="mt-2 text-sm text-muted">
-          Your enquiry has been received. Our team will respond shortly.
-        </p>
-        <Button className="mt-6" type="button" onClick={() => setSubmitted(false)}>
-          Send another message
-        </Button>
+        <button
+          type="button"
+          onClick={() => setSubmitted(false)}
+          className="mt-8 inline-flex h-11 items-center rounded-full border border-border px-5 text-sm font-semibold text-foreground transition hover:border-primary/40"
+        >
+          Send another
+        </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="glass space-y-4 rounded-[22px] p-6 md:p-8">
-      <div>
-        <label className="mb-1.5 block text-sm font-medium" htmlFor="name">
-          {isWorkshop ? "Contact person's name" : "Full name"}
-        </label>
-        <Input
-          id="name"
-          placeholder="Your name"
-          {...register("name", { required: "Name is required" })}
-        />
-        {errors.name ? <p className="mt-1 text-xs text-rose-500">{errors.name.message}</p> : null}
+    <form onSubmit={handleSubmit(onSubmit)} className="max-w-xl">
+      <p className="text-[11px] font-semibold tracking-[0.16em] text-primary uppercase">
+        Enquiry
+      </p>
+      <h2 className="mt-2 font-[family-name:var(--font-display)] text-[1.65rem] font-semibold tracking-tight text-foreground sm:text-[1.9rem]">
+        How can we help?
+      </h2>
+      <p className="mt-2 text-[14px] leading-relaxed text-muted">
+        Pick a topic and leave your details—we’ll respond with clear next steps.
+      </p>
+
+      <div className="mt-7">
+        <p className="mb-2.5 text-[11px] font-semibold tracking-[0.12em] text-muted uppercase">
+          Topic
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {topics.map((item) => {
+            const active = topic === item.id;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setValue("topic", item.id, { shouldValidate: true })}
+                className={cn(
+                  "inline-flex h-9 items-center rounded-full border px-3.5 text-[13px] font-semibold transition",
+                  active
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border bg-transparent text-foreground hover:border-primary/40"
+                )}
+              >
+                {item.label}
+              </button>
+            );
+          })}
+        </div>
+        <input type="hidden" {...register("topic", { required: true })} />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className="mb-1.5 block text-sm font-medium" htmlFor="email">
-            Official email
-          </label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="you@email.com"
-            {...register("email", { required: "Email is required" })}
-          />
-          {errors.email ? (
-            <p className="mt-1 text-xs text-rose-500">{errors.email.message}</p>
-          ) : null}
-        </div>
-        <div>
-          <label className="mb-1.5 block text-sm font-medium" htmlFor="phone">
-            Phone
-          </label>
-          <Input
-            id="phone"
-            placeholder="+91"
-            {...register("phone", { required: "Phone is required" })}
-          />
-          {errors.phone ? (
-            <p className="mt-1 text-xs text-rose-500">{errors.phone.message}</p>
-          ) : null}
-        </div>
-      </div>
-
-      <div>
-        <label className="mb-1.5 block text-sm font-medium" htmlFor="topic">
-          Enquiry type
-        </label>
-        <select
-          id="topic"
-          className="flex h-11 w-full rounded-xl border border-border bg-white px-3 text-sm outline-none ring-primary/30 focus:ring-2"
-          {...register("topic", { required: "Please select a topic" })}
+      <div className="mt-8 space-y-6">
+        <Field
+          label={isWorkshop ? "Contact person" : "Full name"}
+          htmlFor="name"
+          error={errors.name?.message}
         >
-          <option>General Enquiry</option>
-          <option>Corporate Workshop</option>
-          <option>Mutual Fund Solutions</option>
-          <option>Investment Support</option>
-          <option>Financial Education</option>
-        </select>
-      </div>
-
-      {isWorkshop ? (
-        <div>
-          <label className="mb-1.5 block text-sm font-medium" htmlFor="company">
-            Company name
-          </label>
-          <Input
-            id="company"
-            placeholder="Organisation name"
-            {...register("company", {
-              required: isWorkshop ? "Company name is required" : false,
-            })}
+          <input
+            id="name"
+            className={fieldClass}
+            placeholder="Your name"
+            {...register("name", { required: "Name is required" })}
           />
-          {errors.company ? (
-            <p className="mt-1 text-xs text-rose-500">{errors.company.message}</p>
-          ) : null}
-        </div>
-      ) : null}
+        </Field>
 
-      <div>
-        <label className="mb-1.5 block text-sm font-medium" htmlFor="message">
-          Message
-        </label>
-        <Textarea
-          id="message"
-          placeholder={
-            isWorkshop
-              ? "Employee count, online/in-person preference, preferred date, topics of interest…"
-              : "Tell us what you would like to learn about our services"
-          }
-          {...register("message")}
-        />
+        <div className="grid gap-6 sm:grid-cols-2">
+          <Field label="Email" htmlFor="email" error={errors.email?.message}>
+            <input
+              id="email"
+              type="email"
+              className={fieldClass}
+              placeholder="you@email.com"
+              {...register("email", { required: "Email is required" })}
+            />
+          </Field>
+          <Field label="Phone" htmlFor="phone" error={errors.phone?.message}>
+            <input
+              id="phone"
+              className={fieldClass}
+              placeholder="+91"
+              {...register("phone", { required: "Phone is required" })}
+            />
+          </Field>
+        </div>
+
+        {isWorkshop ? (
+          <Field label="Company" htmlFor="company" error={errors.company?.message}>
+            <input
+              id="company"
+              className={fieldClass}
+              placeholder="Organisation name"
+              {...register("company", {
+                required: isWorkshop ? "Company name is required" : false,
+              })}
+            />
+          </Field>
+        ) : null}
+
+        <Field label="Message" htmlFor="message">
+          <textarea
+            id="message"
+            rows={4}
+            className={cn(fieldClass, "resize-none")}
+            placeholder={
+              isWorkshop
+                ? "Team size, online or in-person, preferred date, topics…"
+                : "What would you like to talk about?"
+            }
+            {...register("message")}
+          />
+        </Field>
       </div>
 
-      <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={isSubmitting}>
-        {isSubmitting ? "Sending…" : isWorkshop ? "Request Workshop" : "Send Enquiry"}
-      </Button>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground transition hover:brightness-105 disabled:opacity-60"
+        >
+          {isSubmitting ? "Sending…" : isWorkshop ? "Request workshop" : "Send message"}
+        </button>
+        <p className="text-[12px] text-muted sm:max-w-[200px]">
+          No spam. Reply in 1–2 working days.
+        </p>
+      </div>
     </form>
   );
 }
@@ -180,9 +230,7 @@ function ContactFormInner() {
 export function ContactForm() {
   return (
     <Suspense
-      fallback={
-        <div className="glass h-[420px] animate-pulse rounded-[22px] bg-white/70" aria-hidden />
-      }
+      fallback={<div className="h-[480px] animate-pulse rounded-xl bg-surface" aria-hidden />}
     >
       <ContactFormInner />
     </Suspense>

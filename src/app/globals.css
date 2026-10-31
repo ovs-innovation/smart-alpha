@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafbfa;
-  --foreground: #0e1512;
+  --background: #ffffff;
+  --foreground: #0c1610;
   --card: #ffffff;
   --card-solid: #ffffff;
-  --muted: #66736c;
-  --border: #e4ebe6;
-  --primary: #2db85a;
+  --muted: #5c6b62;
+  --border: #d5e0d6;
+  --primary: #1a9a48;
   --primary-foreground: #04140a;
-  --accent: #0e1512;
-  --ring: #2db85a;
-  --surface: #f1f5f2;
-  --ink-soft: #44514a;
+  --accent: #0c1610;
+  --ring: #1a9a48;
+  --surface: #f4f7f4;
+  --ink-soft: #3d4a42;
+  --gold: #b8892d;
+  --gold-soft: #e8d5a8;
+  --saffron: #e07a2f;
   --shadow: 0 18px 50px rgba(14, 21, 18, 0.07);
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -28,6 +31,9 @@
   --color-accent: var(--accent);
   --color-ring: var(--ring);
   --color-surface: var(--surface);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-saffron: var(--saffron);
   --font-sans: var(--font-body);
   --font-heading: var(--font-display);
   --radius-xl: 1rem;
@@ -48,6 +54,74 @@ body {
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Soft jaali / rangoli-inspired lattice */
+.india-jaali {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(184, 137, 45, 0.14) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.india-tricolor {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #e07a2f 0%,
+    #e07a2f 33.3%,
+    #f7f7f5 33.3%,
+    #f7f7f5 66.6%,
+    #1a9a48 66.6%,
+    #1a9a48 100%
+  );
+  opacity: 0.85;
+}
+
+.landing-grain {
+  position: relative;
+}
+
+.landing-grain::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  z-index: 1;
+}
+
+@keyframes land-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes land-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes land-scale {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 h1,

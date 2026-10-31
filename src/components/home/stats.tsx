@@ -1,38 +1,27 @@
 "use client";
 
-import { Reveal } from "@/components/motion/reveal";
-import { Section } from "@/components/ui/section";
 import { siteConfig } from "@/content/site";
 
 const trustItems = [
-  { label: "AMFI Registration", value: siteConfig.arn },
-  { label: "Focus", value: "Education first" },
-  { label: "Workshops", value: "Corporate & teams" },
-  { label: "Based in", value: "Moradabad, UP" },
+  siteConfig.arn,
+  "SIPs & education",
+  "Indian families",
+  "Moradabad, UP",
 ];
 
 export function Stats() {
   return (
-    <Section className="border-y border-border bg-surface py-7 md:py-12">
-      <Reveal soft>
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 lg:gap-0">
-          {trustItems.map((item, index) => (
-            <div
-              key={item.label}
-              className={`px-2 text-center lg:px-6 ${
-                index > 0 ? "lg:border-l lg:border-border" : ""
-              }`}
-            >
-              <p className="text-[11px] font-semibold tracking-[0.16em] text-primary uppercase">
-                {item.label}
-              </p>
-              <p className="mt-2 font-[family-name:var(--font-display)] text-lg font-semibold tracking-tight text-foreground md:text-xl">
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </div>
-      </Reveal>
-    </Section>
+    <section className="border-y border-border bg-surface">
+      <div className="mx-auto flex w-full max-w-[1100px] flex-wrap items-center justify-center gap-x-6 gap-y-2 px-5 py-4 sm:justify-between sm:px-8 lg:px-10">
+        {trustItems.map((item) => (
+          <p
+            key={item}
+            className="text-[12px] font-medium tracking-wide text-muted sm:text-[13px]"
+          >
+            {item}
+          </p>
+        ))}
+      </div>
+    </section>
   );
 }

@@ -36,13 +36,13 @@ export function BrandLogo({
       width={s.width}
       height={s.height}
       priority={priority}
-      className={cn(s.className, "object-contain object-left")}
+      className={cn(s.className, "object-contain object-left", className)}
     />
   );
 
   const mark = animated ? (
     <motion.span
-      className={cn("inline-flex", className)}
+      className="inline-flex"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
@@ -50,7 +50,7 @@ export function BrandLogo({
       {image}
     </motion.span>
   ) : (
-    <span className={cn("inline-flex", className)}>{image}</span>
+    <span className="inline-flex">{image}</span>
   );
 
   if (!href) return mark;

@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "Smart Alpha",
   founder: "Sachin Gupta",
   arn: "ARN-142487",
-  tagline: "Make Informed Financial Decisions With Greater Clarity.",
+  tagline: "Mutual fund investments are subject to SENTIMENT risk",
   description:
     "Smart Alpha helps individuals and organisations understand investment concepts, explore mutual fund solutions, and build financial awareness through education and workshops.",
   url: "https://smartalpha.in",
@@ -28,12 +28,34 @@ export const siteConfig = {
   },
 } as const;
 
+/** Sachin profile — use these exact details everywhere */
+export const sachinProfile = {
+  name: "Sachin Gupta",
+  title: "Founder, Smart Alpha",
+  journeySince: "2006",
+  education: "MBA Finance, Jaipuria Institute of Management",
+  currentRole: "Independent Director of Lattey Industries (NSE Listed Company)",
+  lastJob: "Globe Capital Delhi as Team Head",
+  basedIn: "Moradabad, UP",
+  facts: [
+    { label: "Education", value: "MBA Finance, Jaipuria Institute of Management" },
+    { label: "Journey since", value: "2006" },
+    {
+      label: "Current role",
+      value: "Independent Director of Lattey Industries (NSE Listed Company)",
+    },
+    { label: "Last job", value: "Globe Capital Delhi as Team Head" },
+    { label: "AMFI", value: "ARN-142487" },
+    { label: "Based in", value: "Moradabad, UP" },
+  ],
+} as const;
+
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services", mega: true },
   { label: "Workshops", href: "/workshops" },
-  { label: "Insights", href: "/market-insights" },
+  { label: "FAQs", href: "/faqs" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -51,7 +73,6 @@ export const footerLinks = {
     { label: "Portfolio Review", href: "/services#investment-support" },
   ],
   resources: [
-    { label: "Insights", href: "/market-insights" },
     { label: "Workshops", href: "/workshops" },
     { label: "FAQs", href: "/faqs" },
   ],
@@ -61,14 +82,53 @@ export const footerLinks = {
   ],
 } as const;
 
+/** About page — achievement highlights (fact-based, no invented AUM/clients) */
+export const aboutAchievements = {
+  eyebrow: "The journey so far",
+  title: "Built on experience, guided by clarity",
+  stats: [
+    { value: "2006", label: "Journey began" },
+    { value: "20+", label: "Years in finance" },
+    { value: "NSE", label: "Listed board role" },
+    { value: "AMFI", label: "ARN-142487" },
+  ],
+  milestones: [
+    {
+      year: "2006",
+      title: "Finance journey begins",
+      text: "Stepped into markets with a long-term view on learning and investor education.",
+    },
+    {
+      year: "Career",
+      title: "Team Head, Globe Capital Delhi",
+      text: "Led teams in one of India’s known broking houses—discipline, process and client focus.",
+    },
+    {
+      year: "Education",
+      title: "MBA Finance, Jaipuria",
+      text: "Formal grounding in finance to sharpen how markets and money decisions are taught.",
+    },
+    {
+      year: "Today",
+      title: "Independent Director, Lattey Industries",
+      text: "Board role at an NSE-listed company—governance experience that informs Smart Alpha’s approach.",
+    },
+    {
+      year: "Smart Alpha",
+      title: "Education-first investing",
+      text: "Mutual fund guidance and corporate workshops for Indian families and teams—clarity before action.",
+    },
+  ],
+} as const;
+
 export const homeCopy = {
   hero: {
-    eyebrow: "Smart Alpha",
-    title: "Make Informed Financial Decisions With Greater Clarity.",
+    eyebrow: "भारत के लिए साफ़ समझ",
+    title: "Money clarity, without the jargon.",
     description:
-      "Understand investment concepts, explore mutual fund solutions and help your employees build financial awareness with Smart Alpha.",
-    primaryCta: { label: "Explore Our Services", href: "/services" },
-    secondaryCta: { label: "Book a Workshop", href: "/workshops" },
+      "Mutual funds, SIPs and simple market education—explained clearly for Indian families.",
+    primaryCta: { label: "Get started", href: "/contact" },
+    secondaryCta: { label: "Book a workshop", href: "/workshops" },
   },
   about: {
     eyebrow: "About Smart Alpha",
@@ -79,13 +139,13 @@ export const homeCopy = {
     ],
   },
   founder: {
-    eyebrow: "Leadership",
+    eyebrow: "Leadership · Moradabad",
     title: "Meet Sachin Gupta",
-    body: "Sachin Gupta is the face behind Smart Alpha, sharing financial education and helping people better understand investment concepts. Through educational content and corporate workshops, he aims to make financial topics more accessible and practical.",
+    body: "Educational qualification—MBA Finance, Jaipuria Institute of Management. Journey since 2006. Currently working as Independent Director of Lattey Industries (NSE Listed Company). Last job—Globe Capital Delhi as Team Head.",
   },
   contact: {
-    title: "Let's Start a Conversation",
+    title: "Talk to Smart Alpha",
     description:
-      "Whether you represent a company looking to organise a financial-awareness workshop or an individual seeking information about Smart Alpha's services, we'd be happy to hear from you.",
+      "Workshops for teams, or a clear conversation on mutual funds and SIPs.",
   },
 } as const;

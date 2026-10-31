@@ -14,9 +14,8 @@ export const services: Service[] = [
   {
     id: "1",
     slug: "mutual-fund-solutions",
-    title: "Mutual Fund Solutions",
-    description:
-      "Explore mutual fund options and relevant scheme information, subject to authorised services.",
+    title: "Mutual Funds",
+    description: "SIPs and mutual fund options matched to your goals.",
     longDescription:
       "Explore mutual fund options and relevant scheme information, subject to authorised services.",
     cta: { label: "Enquire", href: "/contact?topic=mutual-funds" },
@@ -27,12 +26,11 @@ export const services: Service[] = [
   {
     id: "2",
     slug: "corporate-workshops",
-    title: "Corporate Workshops",
-    description:
-      "Educational sessions covering budgeting, saving, investment fundamentals, risk awareness and financial goals.",
+    title: "Workshops",
+    description: "Practical money sessions for companies and employees.",
     longDescription:
       "Educational sessions covering budgeting, saving, investment fundamentals, risk awareness and financial goals.",
-    cta: { label: "Organise a Workshop", href: "/workshops" },
+    cta: { label: "Book workshop", href: "/workshops" },
     icon: "Users",
     image: "/images/sa-svc-workshop.jpg",
     imageAlt: "Hand ticking items on a planning checklist notebook",
@@ -40,12 +38,11 @@ export const services: Service[] = [
   {
     id: "3",
     slug: "financial-education",
-    title: "Financial Education & Market Insights",
-    description:
-      "Accessible explanations of market movements, investment terminology and investing concepts.",
+    title: "Market Education",
+    description: "Markets and investing explained in simple language.",
     longDescription:
       "Accessible explanations of market movements, investment terminology and investing concepts.",
-    cta: { label: "Explore Insights", href: "/market-insights" },
+    cta: { label: "Learn more", href: "/services#financial-education" },
     icon: "BookOpen",
     image: "/images/sa-svc-education.jpg",
     imageAlt: "Bookshelf representing learning and financial education",
@@ -53,12 +50,11 @@ export const services: Service[] = [
   {
     id: "4",
     slug: "investment-support",
-    title: "Investment Support & Portfolio Review",
-    description:
-      "Discuss review, monitoring or distribution services—including scope, fees and authorisations.",
+    title: "Portfolio Support",
+    description: "Portfolio review and clear next steps—no jargon.",
     longDescription:
-      "Discuss actual review, monitoring or distribution services, including scope, fees and authorisations.",
-    cta: { label: "Discuss Requirements", href: "/contact?topic=portfolio-review" },
+      "Discuss review, monitoring or distribution services, including scope, fees and authorisations.",
+    cta: { label: "Talk to us", href: "/contact?topic=portfolio-review" },
     icon: "Briefcase",
     image: "/images/sa-svc-portfolio.jpg",
     imageAlt: "Laptop and printed analytics charts on a review desk",

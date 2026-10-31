@@ -48,7 +48,7 @@ export function HeroVisual() {
                 {[
                   ["Mutual Funds", "SIPs"],
                   ["Workshops", "Teams"],
-                  ["Insights", "Learn"],
+                  ["Education", "Clarity"],
                 ].map(([title, desc]) => (
                   <div key={title} className="min-w-0">
                     <p className="truncate text-[11px] font-semibold text-[#111814] sm:text-[12px]">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Source_Sans_3 } from "next/font/google";
+import { Bricolage_Grotesque, Figtree, Noto_Sans_Devanagari } from "next/font/google";
 import { AppProviders } from "@/components/providers/app-providers";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -9,15 +9,21 @@ import { LogoLoader } from "@/components/motion/logo-loader";
 import { siteConfig } from "@/content/site";
 import "./globals.css";
 
-const display = Plus_Jakarta_Sans({
+const display = Bricolage_Grotesque({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
 });
 
-const body = Source_Sans_3({
+const body = Figtree({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const hindi = Noto_Sans_Devanagari({
+  variable: "--font-hindi",
+  subsets: ["devanagari"],
   weight: ["400", "500", "600", "700"],
 });
 
@@ -74,7 +80,11 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${display.variable} ${body.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${display.variable} ${body.variable} ${hindi.variable}`}
+    >
       <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <script
           type="application/ld+json"
